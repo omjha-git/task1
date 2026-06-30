@@ -1,116 +1,103 @@
-﻿export const topDomains = [
-  { name: "Language Modeling", count: "37067" },
-  { name: "Image Understanding", count: "7626" },
-  { name: "Reinforcement Learning", count: "7177" },
-  { name: "Question Answering", count: "4199" },
-  { name: "Reasoning", count: "3401" },
-  { name: "Image Generation", count: "3119" },
-  { name: "3D Generation", count: "2333" },
-  { name: "Image Segmentation", count: "2137" },
+﻿export const navLinks = ["Papers", "Methods", "Tasks", "Models", "Datasets", "Benchmarks", "Researchers", "Organizations"];
+
+export const heroChips = [
+  { label: "Agents", icon: "bot" },
+  { label: "Reasoning", icon: "nodes" },
+  { label: "Vision", icon: "eye" },
+  { label: "Coding", icon: "code" },
+  { label: "Robotics", icon: "robot" },
+  { label: "All Topics", icon: "grid" },
 ];
 
-export const trendingDomains = [
-  { name: "Image Restoration", growth: "2.8x" },
-  { name: "Time-Series Forecasting", growth: "2.7x" },
-  { name: "Computer Use Agents", growth: "2.6x" },
-  { name: "Coding Agents", growth: "2.6x" },
-  { name: "Video Understanding", growth: "2.5x" },
-  { name: "World Models", growth: "2.4x" },
-  { name: "Motion Generation", growth: "2.3x" },
-  { name: "Robotics", growth: "1.9x" },
+export const feedItems = [
+  { label: "Trending Papers", icon: "flame", active: true },
+  { label: "Latest Papers", icon: "clock" },
+  { label: "New GitHub Stars", icon: "star" },
 ];
 
-export const feedTabs = ["Today", "This Week", "This Month", "All Time"];
-export const sortFilters = ["Trending", "Newest", "Most Cited"];
+export const taskItems = [
+  { label: "Agents", icon: "bot" },
+  { label: "Reasoning", icon: "brain" },
+  { label: "Vision", icon: "eye" },
+  { label: "Coding", icon: "code" },
+  { label: "Robotics", icon: "robot" },
+  { label: "Language Modeling", icon: "book" },
+  { label: "Computer Use", icon: "monitor" },
+  { label: "World Models", icon: "globe" },
+];
+
+export const feedTabs = ["Today", "This Week", "This Month", "All time"];
 
 export const papers = [
   {
     title: "GLM-5.2: Built for Long-Horizon Tasks",
-    authors: "Zai Team",
-    date: "30 Jun 2026",
-    citations: "5.8K",
+    authors: "Z.ai Team",
+    date: "Jun 16, 2026",
     abstract:
-      "A frontier agentic model optimized for long-horizon planning, tool-use workflows, and multi-step research tasks with strong gains across reasoning benchmarks.",
-    benchmark: "State-of-the-art on LongBench-Agent with 71.4 task success",
-    tags: ["Language Modeling", "Agents", "Tool Use"],
-    thumbnail: "LM",
-    accent: "#ff5a1f",
-    metrics: { stars: "342/hr", models: "18 models", spaces: "7 spaces", datasets: "5 datasets" },
+      "GLM-5.2 is Z.ai's latest flagship open-weight model for long-horizon agentic engineering. The release extends GLM-5.1 with a solid 1M-token context, sparse-attention efficiency, and improved speculative decoding.",
+    result: "SOTA on AIME 2026, HMF Feb 2026, PostTrainBench · #3 on FrontierSWE, NL2Repo",
+    tags: ["Agents", "Coding Agents", "Language Modeling", "Math", "World Knowledge", "DeepSeek Sparse Attention", "MCP", "Mixture-of-Experts (MoE)", "Transformer"],
+    thumbnail: "GLM-5.2 Built for Long-Horizon Tasks",
+    metrics: { stars: "11.2", repo: "11.3K", citations: "30" },
   },
   {
-    title: "MiniT2I: A Minimalist Baseline for Text-to-Image Generation",
-    authors: "A. Rao, Mei Tan, Frontier Vision Lab",
-    date: "29 Jun 2026",
-    citations: "1.1K",
+    title: "Kimi K2 Technical Report",
+    authors: "Moonshot AI",
+    date: "Jun 10, 2026",
     abstract:
-      "A compact text-to-image recipe showing that careful data curation, simple diffusion schedules, and small transformer blocks can rival heavier baselines.",
-    benchmark: "Ranks #2 on GenEval zero-shot image composition",
-    tags: ["Image Generation", "Diffusion", "Benchmarks"],
-    thumbnail: "T2I",
-    accent: "#ff8a3d",
-    metrics: { stars: "219/hr", models: "9 models", spaces: "14 spaces", datasets: "3 datasets" },
-  },
-  {
-    title: "LongCat-Next: Lexicalizing Modalities as Discrete Tokens",
-    authors: "LongCat Research",
-    date: "29 Jun 2026",
-    citations: "862",
-    abstract:
-      "A unified multimodal tokenizer that maps text, image, audio, and UI state into discrete lexical units for more stable long-context reasoning.",
-    benchmark: "Improves MMBench reasoning by 8.6 points over prior tokenizer baselines",
-    tags: ["Multimodal", "Tokenization", "Long Context"],
-    thumbnail: "LC",
-    accent: "#e94816",
-    metrics: { stars: "186/hr", models: "11 models", spaces: "4 spaces", datasets: "6 datasets" },
+      "Kimi K2 is a mixture-of-experts language model with 1T total parameters and 128K context length. It achieves state-of-the-art performance on agentic, coding, and general knowledge benchmarks.",
+    result: "Strong results on SWE-Bench Verified, AIME, GPQA and long-context coding tasks",
+    tags: ["Large Model", "Mixture-of-Experts (MoE)", "Pre-training", "Long Context"],
+    thumbnail: "Kimi K2 Technical Report",
+    metrics: { stars: "9.8", repo: "8.7K", citations: "25" },
   },
   {
     title: "SWE-Bench Pro: Stronger Software Agents",
     authors: "Open Research Lab",
-    date: "28 Jun 2026",
-    citations: "1.9K",
+    date: "Jun 8, 2026",
     abstract:
-      "A software-engineering benchmark with real repository issues, richer test traces, task decomposition labels, and stricter agent evaluation protocols.",
-    benchmark: "New top result: 64.2 resolved issues with verified patch traces",
-    tags: ["Coding Agents", "Benchmarks", "Evaluation"],
-    thumbnail: "SWE",
-    accent: "#ff5a1f",
-    metrics: { stars: "171/hr", models: "23 models", spaces: "2 spaces", datasets: "8 datasets" },
+      "A harder software-engineering benchmark with real repository issues, execution traces, task decomposition labels, and stricter patch verification for coding agents.",
+    result: "Top agent resolves 64.2 verified issues with reproducible patch traces",
+    tags: ["Coding", "Agents", "Benchmarks", "Evaluation", "Tool Use"],
+    thumbnail: "SWE-Bench Pro",
+    metrics: { stars: "8.4", repo: "6.9K", citations: "18" },
   },
   {
-    title: "Vision-R1: Multimodal Reasoning at Scale",
-    authors: "Frontier Vision Group",
-    date: "28 Jun 2026",
-    citations: "1.4K",
+    title: "MiniT2I: A Minimalist Baseline for Text-to-Image Generation",
+    authors: "A. Rao, Mei Tan, Frontier Vision Lab",
+    date: "Jun 4, 2026",
     abstract:
-      "A vision-language reasoning model for charts, diagrams, screens, and real-world visual problem solving, trained with verifiable intermediate steps.",
-    benchmark: "SOTA on ChartQA-Pro and ScreenSpot-V2 reasoning splits",
-    tags: ["Vision", "Reasoning", "Multimodal"],
-    thumbnail: "V1",
-    accent: "#f97316",
-    metrics: { stars: "148/hr", models: "15 models", spaces: "12 spaces", datasets: "4 datasets" },
-  },
-  {
-    title: "OSWorld 2.0: Benchmarking Computer Use Agents",
-    authors: "OSWorld Contributors",
-    date: "27 Jun 2026",
-    citations: "2.6K",
-    abstract:
-      "A broader computer-use benchmark covering desktop automation, browser workflows, file operations, and multi-application task planning.",
-    benchmark: "Adds 1,240 verified tasks across productivity and engineering workflows",
-    tags: ["Computer Use Agents", "Robotics", "Evaluation"],
-    thumbnail: "OS",
-    accent: "#ff6a21",
-    metrics: { stars: "133/hr", models: "31 models", spaces: "5 spaces", datasets: "10 datasets" },
+      "A compact text-to-image baseline showing that careful data curation, simple diffusion schedules, and small transformer blocks can rival heavier generation systems.",
+    result: "Ranks #2 on GenEval zero-shot image composition with a small training budget",
+    tags: ["Image Generation", "Diffusion", "Vision", "Benchmarks"],
+    thumbnail: "MiniT2I",
+    metrics: { stars: "7.6", repo: "5.1K", citations: "12" },
   },
 ];
 
 export const updates = [
-  { label: "New leaderboard", text: "Agentic SWE verified results updated with 41 submissions.", meta: "2h" },
-  { label: "Dataset", text: "HF community added 18 curated UI automation datasets this week.", meta: "5h" },
-  { label: "Method", text: "Tree-search planning is trending across computer-use agents.", meta: "1d" },
-];
-
-export const methodGroups = [
-  { label: "Popular Methods", items: ["ReAct", "Tool Use", "RAG", "MoE", "Self-Refine"] },
-  { label: "Active Benchmarks", items: ["SWE-Bench", "OSWorld", "MMBench", "LongBench", "GenEval"] },
+  {
+    source: "X / Twitter",
+    channel: "X / Twitter",
+    time: "2h ago",
+    text: "LongRPE 2.0 is a game changer for long context. 10M tokens without quality collapse.",
+    likes: "201",
+    replies: "24",
+  },
+  {
+    source: "Reddit",
+    channel: "r/MachineLearning",
+    time: "4h ago",
+    text: "Kimi K2 technical report is insane. 128K context with 1T params and beats GPT-4.1 on coding.",
+    likes: "342",
+    replies: "68",
+  },
+  {
+    source: "GitHub",
+    channel: "GitHub",
+    time: "6h ago",
+    text: "vLLM v0.7.0 released with major performance improvements and new API features.",
+    likes: "125",
+    replies: "17",
+  },
 ];
