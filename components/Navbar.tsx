@@ -1,57 +1,54 @@
-﻿import { Bookmark, ChevronDown, Menu, Search, Upload } from "lucide-react";
+﻿import { Bookmark, ChevronDown, Menu, Upload } from "lucide-react";
+import { SearchBar } from "@/components/SearchBar";
 
-const navLinks = ["Explore", "Rankings", "Tasks", "Methods", "About"];
+const navLinks = ["Papers", "Tasks", "Methods", "Datasets", "Benchmarks"];
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-40 border-b border-atlas-line/80 bg-atlas-soft/88 shadow-[0_1px_0_rgba(255,255,255,0.75)] backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
-        <a href="#" className="flex min-w-0 items-center gap-2.5" aria-label="Frontier Atlas home">
-          <div className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-atlas-orange text-sm font-black text-white shadow-glow ring-1 ring-atlas-orange/20">
+    <header className="sticky top-0 z-40 border-b border-atlas-line bg-white/92 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-[1440px] items-center gap-3 px-4 py-2.5 sm:px-6 lg:px-8">
+        <a href="#" className="flex shrink-0 items-center gap-2" aria-label="Frontier Atlas home">
+          <div className="grid h-8 w-8 place-items-center rounded-md bg-atlas-orange text-xs font-black text-white shadow-sm">
             FA
           </div>
-          <span className="truncate text-lg font-black tracking-tight text-atlas-ink">Frontier Atlas</span>
+          <span className="hidden text-base font-black tracking-tight text-atlas-ink sm:inline">Frontier Atlas</span>
         </a>
 
-        <nav className="hidden items-center gap-1 rounded-full border border-atlas-line bg-white/75 p-1 text-sm font-semibold text-atlas-muted shadow-sm lg:flex">
+        <nav className="hidden items-center gap-1 text-sm font-bold text-atlas-muted lg:flex">
           {navLinks.map((link) => (
             <a
               key={link}
-              className={`rounded-full px-4 py-2 transition hover:bg-atlas-soft hover:text-atlas-ink ${link === "Explore" ? "bg-atlas-soft text-atlas-ink" : ""}`}
               href={`#${link.toLowerCase()}`}
+              className={`rounded-md px-3 py-2 transition hover:bg-atlas-soft hover:text-atlas-orange ${link === "Papers" ? "text-atlas-orange" : ""}`}
             >
               {link}
             </a>
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
-          <button className="hidden h-10 items-center gap-2 rounded-full border border-atlas-line bg-white/85 px-4 text-sm font-semibold text-atlas-muted shadow-sm transition hover:-translate-y-0.5 hover:border-atlas-orange/60 hover:text-atlas-ink md:flex">
-            <Search size={16} />
-            Search
-          </button>
-          <button className="hidden h-10 items-center gap-2 rounded-full border border-atlas-line bg-white/85 px-4 text-sm font-semibold text-atlas-muted shadow-sm transition hover:-translate-y-0.5 hover:border-atlas-orange/60 hover:text-atlas-ink sm:flex">
-            <Bookmark size={16} />
+        <div className="ml-auto hidden w-full max-w-md md:block">
+          <SearchBar compact />
+        </div>
+
+        <div className="ml-auto flex items-center gap-2 md:ml-0">
+          <button className="hidden h-9 items-center gap-2 rounded-md border border-atlas-line bg-white px-3 text-sm font-bold text-atlas-muted transition hover:border-atlas-orange hover:text-atlas-orange sm:flex">
+            <Bookmark size={15} />
             Save
           </button>
-          <button className="flex h-10 items-center gap-2 rounded-full bg-atlas-orange px-4 text-sm font-bold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-[#f24910] sm:px-5">
-            <Upload size={16} />
+          <button className="flex h-9 items-center gap-2 rounded-md bg-atlas-orange px-3 text-sm font-black text-white shadow-sm transition hover:bg-[#ed4810]">
+            <Upload size={15} />
             <span className="hidden sm:inline">Submit</span>
-            <ChevronDown className="hidden sm:block" size={15} />
+            <ChevronDown className="hidden sm:block" size={14} />
           </button>
-          <button className="grid h-10 w-10 place-items-center rounded-full border border-atlas-line bg-white text-atlas-muted shadow-sm transition hover:border-atlas-orange hover:text-atlas-ink lg:hidden" aria-label="Open navigation">
+          <button className="grid h-9 w-9 place-items-center rounded-md border border-atlas-line bg-white text-atlas-muted lg:hidden" aria-label="Open navigation">
             <Menu size={18} />
           </button>
         </div>
       </div>
 
-      <nav className="mx-auto flex max-w-7xl gap-2 overflow-x-auto px-4 pb-3 text-sm font-semibold text-atlas-muted sm:px-6 lg:hidden lg:px-8">
-        {navLinks.map((link) => (
-          <a key={link} className="shrink-0 rounded-full border border-atlas-line bg-white/80 px-3 py-2" href={`#${link.toLowerCase()}`}>
-            {link}
-          </a>
-        ))}
-      </nav>
+      <div className="mx-auto max-w-[1440px] px-4 pb-2 sm:px-6 md:hidden">
+        <SearchBar compact />
+      </div>
     </header>
   );
 }
